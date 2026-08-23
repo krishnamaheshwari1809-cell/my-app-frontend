@@ -1,17 +1,25 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: '', email: '', message: '' });
+    setStatus('sending');
+    try {
+      await axios.post('https://my-app-backend-bh6j.onrender.com/api/contact', form);
+      setStatus('sent');
+      setForm({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -68,12 +76,17 @@ function Contact() {
               onChange={handleChange}
               required
             />
-            <button type="submit" className="btn" style={{ width: '100%' }}>
-              Send Message
+            <button type="submit" className="btn" style={{ width: '100%' }} disabled={status === 'sending'}>
+              {status === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
-            {sent && (
+            {status === 'sent' && (
               <p style={{ color: '#4ade80', marginTop: '12px', textAlign: 'center' }}>
                 Message sent! I'll get back to you soon. ✅
+              </p>
+            )}
+            {status === 'error' && (
+              <p style={{ color: '#f87171', marginTop: '12px', textAlign: 'center' }}>
+                Something went wrong. Please try again or email me directly. ❌
               </p>
             )}
           </form>
