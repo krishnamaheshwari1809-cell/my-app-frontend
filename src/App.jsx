@@ -1,25 +1,24 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Blog from './pages/Blog';
+import Contact from './pages/Contact';
 
 function App() {
-  const [message, setMessage] = useState('Loading...');
-
-  useEffect(() => {
-    axios.get('https://my-app-backend-bh6j.onrender.com/api/hello')
-      .then((response) => {
-        setMessage(response.data.message);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setMessage('Backend se connect nahi ho paya');
-      });
-  }, []);
-
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>React + Node.js App</h1>
-      <p>Backend se message: <strong>{message}</strong></p>
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
