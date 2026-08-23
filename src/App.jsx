@@ -6,7 +6,7 @@ function App() {
   const [message, setMessage] = useState('Loading...');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/hello')
+    axios.get('https://my-app-backend-bh6j.onrender.com/api/hello')
       .then((response) => {
         setMessage(response.data.message);
       })
