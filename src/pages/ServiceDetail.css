@@ -1,0 +1,110 @@
+.sd-hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15), transparent 60%);
+}
+
+.sd-back {
+  display: inline-block;
+  color: #a1a1aa;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+
+.sd-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.sd-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.sd-tagline {
+  color: #a1a1aa;
+  max-width: 550px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.sd-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.sd-included-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sd-included-list li {
+  color: #c4c4cc;
+  padding-left: 24px;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.sd-included-list li::before {
+  content: '•';
+  color: #8b5cf6;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 0;
+  top: -3px;
+}
+
+.sd-benefits-card {
+  background: rgba(139, 92, 246, 0.06);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 18px;
+  padding: 28px;
+  position: sticky;
+  top: 100px;
+}
+
+.sd-benefit-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  color: #c4c4cc;
+}
+
+.sd-check {
+  color: #8b5cf6;
+  font-weight: 700;
+}
+
+.sd-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sd-faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 22px;
+}
+
+@media (max-width: 768px) {
+  .sd-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sd-benefits-card {
+    position: static;
+  }
+
+  .sd-title {
+    font-size: 1.6rem;
+  }
+}
