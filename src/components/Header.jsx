@@ -17,7 +17,7 @@ function Header() {
     <header className="site-header">
       <div className="container header-wrap">
         <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
-          Krishna<span style={{ color: '#8b5cf6' }}>.</span>
+          TechBuds<span style={{ color: '#8b5cf6' }}>.</span>
         </Link>
 
         <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>

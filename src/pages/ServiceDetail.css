@@ -1,12 +1,12 @@
 .sd-hero {
   padding: 80px 0 60px;
   text-align: center;
-  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15), transparent 60%);
+  background: #fafafa;
 }
 
 .sd-back {
   display: inline-block;
-  color: #a1a1aa;
+  color: #71717a;
   font-size: 0.85rem;
   margin-bottom: 24px;
 }
@@ -20,10 +20,11 @@
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 12px;
+  color: #18181b;
 }
 
 .sd-tagline {
-  color: #a1a1aa;
+  color: #71717a;
   max-width: 550px;
   margin: 0 auto 28px;
   line-height: 1.6;
@@ -44,7 +45,7 @@
 }
 
 .sd-included-list li {
-  color: #c4c4cc;
+  color: #3f3f46;
   padding-left: 24px;
   position: relative;
   font-size: 0.95rem;
@@ -52,7 +53,7 @@
 
 .sd-included-list li::before {
   content: '•';
-  color: #8b5cf6;
+  color: #18181b;
   font-size: 1.3rem;
   position: absolute;
   left: 0;
@@ -60,8 +61,8 @@
 }
 
 .sd-benefits-card {
-  background: rgba(139, 92, 246, 0.06);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 18px;
   padding: 28px;
   position: sticky;
@@ -74,11 +75,11 @@
   align-items: flex-start;
   margin-bottom: 14px;
   font-size: 0.9rem;
-  color: #c4c4cc;
+  color: #3f3f46;
 }
 
 .sd-check {
-  color: #8b5cf6;
+  color: #18181b;
   font-weight: 700;
 }
 
@@ -89,8 +90,8 @@
 }
 
 .sd-faq-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 14px;
   padding: 22px;
 }
