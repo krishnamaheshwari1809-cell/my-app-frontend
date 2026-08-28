@@ -3,10 +3,13 @@ import axios from 'axios';
 import './Admin.css';
 
 const BASE_URL = 'https://my-app-backend-bh6j.onrender.com';
+const ADMIN_PASS = 'Krishna@123';
+const authHeaders = { headers: { 'x-admin-password': ADMIN_PASS } };
+
+const emptyPost = { title: '', excerpt: '', content: '', image: '' };
 
 const Admin = () => {
   const [activeTab, setActiveTab] = useState('home');
-  const [password, setPassword] = useState('');
   const [formData, setFormData] = useState({
     hero: { badge: '', title: '', subtitle: '' },
     stats: [],
@@ -14,37 +17,40 @@ const Admin = () => {
     whyChoose: [],
     testimonials: [],
     about: { heading: '', paragraph1: '', paragraph2: '', skills: [] },
-    contact: { email: '', phone: '' },
+    contact: { email: '', phone: '', links: [] },
   });
   const [posts, setPosts] = useState([]);
+  const [editingPost, setEditingPost] = useState(null);
+  const [postForm, setPostForm] = useState(emptyPost);
+  const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const loadData = async () => {
+    try {
+      const contentRes = await axios.get(`${BASE_URL}/api/content`);
+      const parsedData = contentRes.data;
+      setFormData({
+        hero: parsedData?.hero || { badge: '', title: '', subtitle: '' },
+        stats: parsedData?.stats || [],
+        services: parsedData?.services || [],
+        whyChoose: parsedData?.whyChoose || [],
+        testimonials: parsedData?.testimonials || [],
+        about: parsedData?.about || { heading: '', paragraph1: '', paragraph2: '', skills: [] },
+        contact: parsedData?.contact || { email: '', phone: '', links: [] },
+      });
+
+      const postsRes = await axios.get(`${BASE_URL}/api/posts`);
+      setPosts(Array.isArray(postsRes.data) ? postsRes.data : []);
+
+      setLoading(false);
+    } catch (err) {
+      console.error('Error fetching admin data:', err);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const contentRes = await axios.get(`${BASE_URL}/api/content`);
-        const parsedData = contentRes.data;
-        setFormData({
-          hero: parsedData?.hero || { badge: '', title: '', subtitle: '' },
-          stats: parsedData?.stats || [],
-          services: parsedData?.services || [],
-          whyChoose: parsedData?.whyChoose || [],
-          testimonials: parsedData?.testimonials || [],
-          about: parsedData?.about || { heading: '', paragraph1: '', paragraph2: '', skills: [] },
-          contact: parsedData?.contact || { email: '', phone: '' },
-        });
-
-        const postsRes = await axios.get(`${BASE_URL}/api/posts`);
-        setPosts(Array.isArray(postsRes.data) ? postsRes.data : []);
-
-        setLoading(false);
-      } catch (err) {
-        console.error('Error fetching admin data:', err);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
+    loadData();
   }, []);
 
   const handleHeroChange = (field, value) => {
@@ -57,6 +63,24 @@ const Admin = () => {
 
   const handleContactChange = (field, value) => {
     setFormData((prev) => ({ ...prev, contact: { ...(prev?.contact || {}), [field]: value } }));
+  };
+
+  const handleContactLinkChange = (index, field, value) => {
+    const links = [...(formData.contact.links || [])];
+    links[index] = { ...links[index], [field]: value };
+    setFormData((prev) => ({ ...prev, contact: { ...prev.contact, links } }));
+  };
+
+  const addContactLink = () => {
+    setFormData((prev) => ({
+      ...prev,
+      contact: { ...prev.contact, links: [...(prev.contact.links || []), { label: '', value: '' }] },
+    }));
+  };
+
+  const removeContactLink = (index) => {
+    const links = (formData.contact.links || []).filter((_, i) => i !== index);
+    setFormData((prev) => ({ ...prev, contact: { ...prev.contact, links } }));
   };
 
   const handleArrayChange = (arrayName, index, field, value) => {
@@ -80,19 +104,74 @@ const Admin = () => {
   };
 
   const handleSave = async () => {
-    if (!password) {
-      alert('Enter admin password first');
-      return;
-    }
     try {
-      await axios.put(`${BASE_URL}/api/content`, formData, {
-        headers: { 'x-admin-password': password },
-      });
-      alert('Content saved successfully!');
+      await axios.put(`${BASE_URL}/api/content`, formData, authHeaders);
+      alert('Saved successfully!');
     } catch (err) {
       console.error('Save failed:', err);
-      alert('Failed to save. Check password or backend console.');
+      alert('Failed to save. Check backend console.');
     }
+  };
+
+  // ---------- BLOG HANDLERS ----------
+  const startEditPost = (post) => {
+    setEditingPost(post._id);
+    setPostForm({ title: post.title, excerpt: post.excerpt, content: post.content || '', image: post.image || '' });
+  };
+
+  const startNewPost = () => {
+    setEditingPost('new');
+    setPostForm(emptyPost);
+  };
+
+  const cancelEditPost = () => {
+    setEditingPost(null);
+    setPostForm(emptyPost);
+  };
+
+  const savePost = async () => {
+    try {
+      if (editingPost === 'new') {
+        await axios.post(`${BASE_URL}/api/posts`, postForm, authHeaders);
+      } else {
+        await axios.put(`${BASE_URL}/api/posts/${editingPost}`, postForm, authHeaders);
+      }
+      await loadData();
+      cancelEditPost();
+      alert('Post saved!');
+    } catch (err) {
+      console.error('Post save failed:', err);
+      alert('Failed to save post.');
+    }
+  };
+
+  const deletePost = async (id) => {
+    if (!window.confirm('Delete this post?')) return;
+    try {
+      await axios.delete(`${BASE_URL}/api/posts/${id}`, authHeaders);
+      await loadData();
+    } catch (err) {
+      console.error('Delete failed:', err);
+      alert('Failed to delete post.');
+    }
+  };
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    setUploading(true);
+    const uploadData = new FormData();
+    uploadData.append('image', file);
+    try {
+      const res = await axios.post(`${BASE_URL}/api/upload`, uploadData, {
+        headers: { 'x-admin-password': ADMIN_PASS, 'Content-Type': 'multipart/form-data' },
+      });
+      setPostForm((prev) => ({ ...prev, image: res.data.url }));
+    } catch (err) {
+      console.error('Image upload failed:', err);
+      alert('Image upload failed.');
+    }
+    setUploading(false);
   };
 
   if (loading) {
@@ -108,16 +187,6 @@ const Admin = () => {
       <aside className="admin-sidebar">
         <div className="sidebar-header">
           <h3>Admin Dashboard</h3>
-        </div>
-
-        <div className="form-group" style={{ padding: '0 12px', marginBottom: 20 }}>
-          <label>Admin Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Required to save"
-          />
         </div>
 
         <nav className="sidebar-nav">
@@ -298,11 +367,47 @@ const Admin = () => {
         {activeTab === 'blogs' && (
           <section className="tab-section">
             <h2 className="page-title">Blog Posts Management</h2>
+
+            {editingPost && (
+              <div className="card-box">
+                <h3 className="card-title">{editingPost === 'new' ? 'New Post' : 'Edit Post'}</h3>
+                <div className="form-group">
+                  <label>Title</label>
+                  <input type="text" value={postForm.title} onChange={(e) => setPostForm({ ...postForm, title: e.target.value })} />
+                </div>
+                <div className="form-group">
+                  <label>Excerpt</label>
+                  <textarea rows="2" value={postForm.excerpt} onChange={(e) => setPostForm({ ...postForm, excerpt: e.target.value })} />
+                </div>
+                <div className="form-group">
+                  <label>Content</label>
+                  <textarea rows="6" value={postForm.content} onChange={(e) => setPostForm({ ...postForm, content: e.target.value })} />
+                </div>
+                <div className="form-group">
+                  <label>Image</label>
+                  <input type="file" accept="image/*" onChange={handleImageUpload} />
+                  {uploading && <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Uploading...</p>}
+                  {postForm.image && <img src={postForm.image} alt="preview" style={{ width: '100%', maxWidth: 240, borderRadius: 10, marginTop: 10 }} />}
+                </div>
+                <div style={{ display: 'flex', gap: 12 }}>
+                  <button className="save-btn" onClick={savePost}>Save Post</button>
+                  <button className="delete-btn-text" onClick={cancelEditPost}>Cancel</button>
+                </div>
+              </div>
+            )}
+
             <div className="card-box">
-              <h3 className="card-title">Existing Posts ({posts.length})</h3>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+                <h3 className="card-title" style={{ margin: 0 }}>Existing Posts ({posts.length})</h3>
+                {!editingPost && <button type="button" onClick={startNewPost} className="add-btn">+ Add Post</button>}
+              </div>
               {posts.map((post) => (
-                <div key={post._id} style={{ padding: '10px 0', borderBottom: '1px solid #1e293b' }}>
+                <div key={post._id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #1e293b' }}>
                   <p style={{ fontWeight: 600, margin: 0 }}>{post.title}</p>
+                  <div style={{ display: 'flex', gap: 10 }}>
+                    <button className="delete-btn-text" style={{ color: '#60a5fa' }} onClick={() => startEditPost(post)}>Edit</button>
+                    <button className="delete-btn-text" onClick={() => deletePost(post._id)}>Delete</button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -323,6 +428,27 @@ const Admin = () => {
                 <input type="text" value={formData?.contact?.phone || ''} onChange={(e) => handleContactChange('phone', e.target.value)} />
               </div>
             </div>
+
+            <div className="card-box">
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+                <h3 className="card-title" style={{ margin: 0 }}>Additional Links</h3>
+                <button type="button" onClick={addContactLink} className="add-btn">+ Add Link</button>
+              </div>
+              {(formData?.contact?.links || []).map((link, idx) => (
+                <div key={idx} className="stats-row" style={{ marginBottom: 12 }}>
+                  <div className="form-group" style={{ flex: 1 }}>
+                    <label>Label</label>
+                    <input type="text" placeholder="e.g. WhatsApp" value={link.label || ''} onChange={(e) => handleContactLinkChange(idx, 'label', e.target.value)} />
+                  </div>
+                  <div className="form-group" style={{ flex: 2 }}>
+                    <label>Value</label>
+                    <input type="text" placeholder="e.g. +91 9953792977" value={link.value || ''} onChange={(e) => handleContactLinkChange(idx, 'value', e.target.value)} />
+                  </div>
+                  <button type="button" className="delete-btn" onClick={() => removeContactLink(idx)}>✕</button>
+                </div>
+              ))}
+            </div>
+
             <button className="save-btn" onClick={handleSave}>Save Contact</button>
           </section>
         )}
