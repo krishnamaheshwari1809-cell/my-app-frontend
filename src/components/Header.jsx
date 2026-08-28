@@ -18,11 +18,7 @@ function Header() {
     <header className="site-header">
       <div className="container header-wrap">
         <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
-<<<<<<< HEAD
           <img src={logo} alt="TechBuds" className="logo-img" />
-=======
-          TechBuds<span style={{ color: '#8b5cf6' }}>.</span>
->>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
         </Link>
 
         <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
@@ -31,10 +27,10 @@ function Header() {
               key={link.path}
               to={link.path}
               className="nav-link"
-style={{
-  color: location.pathname === link.path ? '#2463B5' : '#12345B',
-  fontWeight: location.pathname === link.path ? 700 : 500,
-}}
+              style={{
+                color: location.pathname === link.path ? '#60a5fa' : '#cbd5e1',
+                fontWeight: location.pathname === link.path ? 700 : 500,
+              }}
               onClick={() => setMenuOpen(false)}
             >
               {link.name}
