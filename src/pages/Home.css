@@ -3,21 +3,33 @@
   position: relative;
   overflow: hidden;
   padding: 110px 0 90px;
+<<<<<<< HEAD
   background: #F5F9FF;
+=======
+  background: #fafafa;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
 
 .hero-blob {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
+<<<<<<< HEAD
   opacity: 0.25;
+=======
+  opacity: 0.5;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   z-index: 0;
 }
 
 .blob-1 {
   width: 350px;
   height: 350px;
+<<<<<<< HEAD
   background: #5B8FD9;
+=======
+  background: #d4d4d8;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   top: -100px;
   left: -80px;
   animation: float1 8s ease-in-out infinite;
@@ -26,7 +38,11 @@
 .blob-2 {
   width: 280px;
   height: 280px;
+<<<<<<< HEAD
   background: #2463B5;
+=======
+  background: #e4e4e7;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   top: 50px;
   right: -60px;
   animation: float2 10s ease-in-out infinite;
@@ -55,7 +71,11 @@
 }
 
 .eyebrow {
+<<<<<<< HEAD
   color: #2463B5;
+=======
+  color: #52525b;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -65,25 +85,42 @@
 
 .badge {
   display: inline-block;
+<<<<<<< HEAD
   background: #E3EEFF;
   color: #2463B5;
+=======
+  background: #f0f0f1;
+  color: #3f3f46;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 0.85rem;
   margin-bottom: 24px;
+<<<<<<< HEAD
   border: 1px solid #BFD5F2;
+=======
+  border: 1px solid rgba(0, 0, 0, 0.06);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
 
 .hero-title {
   font-size: 3.2rem;
   font-weight: 800;
   margin-bottom: 20px;
+<<<<<<< HEAD
   color: #12345B;
+=======
+  color: #18181b;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
 
 .hero-subtitle {
   font-size: 1.1rem;
+<<<<<<< HEAD
   color: #5B8FD9;
+=======
+  color: #71717a;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   max-width: 620px;
   margin: 0 auto 36px;
   line-height: 1.6;
@@ -93,22 +130,40 @@
   display: inline-block;
   padding: 12px 28px;
   border-radius: 30px;
+<<<<<<< HEAD
   border: 1px solid #2463B5;
   font-weight: 600;
   color: #2463B5;
+=======
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  color: #18181b;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   transition: background 0.2s, border-color 0.2s;
 }
 
 .btn-outline:hover {
+<<<<<<< HEAD
   background: #E3EEFF;
+=======
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.4);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
 
 /* Stats */
 .stats-section {
+<<<<<<< HEAD
   border-top: 1px solid #BFD5F2;
   border-bottom: 1px solid #BFD5F2;
   padding: 48px 0;
   background: #E3EEFF;
+=======
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 48px 0;
+  background: #f5f5f5;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
 
 .stats-grid {
@@ -121,12 +176,20 @@
 .stat-number {
   font-size: 2.2rem;
   font-weight: 800;
+<<<<<<< HEAD
   color: #2463B5;
+=======
+  color: #18181b;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   margin-bottom: 8px;
 }
 
 .stat-label {
+<<<<<<< HEAD
   color: #5B8FD9;
+=======
+  color: #71717a;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   font-size: 0.9rem;
 }
 
@@ -142,7 +205,11 @@ a.service-card {
   text-decoration: none;
   color: inherit;
   background: #ffffff;
+<<<<<<< HEAD
   border: 1px solid #BFD5F2;
+=======
+  border: 1px solid rgba(0, 0, 0, 0.1);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   border-radius: 16px;
   padding: 28px;
   transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
@@ -150,8 +217,13 @@ a.service-card {
 
 a.service-card:hover {
   transform: translateY(-6px);
+<<<<<<< HEAD
   border-color: #2463B5;
   box-shadow: 0 12px 24px rgba(36, 99, 181, 0.15);
+=======
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
 
 /* Process */
@@ -163,7 +235,11 @@ a.service-card:hover {
 
 .process-card {
   background: #ffffff;
+<<<<<<< HEAD
   border: 1px solid #BFD5F2;
+=======
+  border: 1px solid rgba(0, 0, 0, 0.1);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   border-radius: 16px;
   padding: 26px;
 }
@@ -171,7 +247,11 @@ a.service-card:hover {
 .process-num {
   font-size: 1.6rem;
   font-weight: 800;
+<<<<<<< HEAD
   color: rgba(36, 99, 181, 0.35);
+=======
+  color: rgba(0, 0, 0, 0.2);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
 
 /* Why Choose Me */
@@ -186,19 +266,31 @@ a.service-card:hover {
   gap: 16px;
   align-items: flex-start;
   background: #ffffff;
+<<<<<<< HEAD
   border: 1px solid #BFD5F2;
+=======
+  border: 1px solid rgba(0, 0, 0, 0.1);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   border-radius: 14px;
   padding: 22px;
   transition: border-color 0.25s;
 }
 
 .why-card:hover {
+<<<<<<< HEAD
   border-color: #2463B5;
+=======
+  border-color: rgba(0, 0, 0, 0.3);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
 
 .why-icon {
   font-size: 1.5rem;
+<<<<<<< HEAD
   background: #E3EEFF;
+=======
+  background: #f0f0f1;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   min-width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -215,8 +307,13 @@ a.service-card:hover {
 }
 
 .testimonial-card {
+<<<<<<< HEAD
   background: #F5F9FF;
   border: 1px solid #BFD5F2;
+=======
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   border-radius: 16px;
   padding: 28px;
   transition: transform 0.25s;
@@ -235,7 +332,11 @@ a.service-card:hover {
 
 .blog-preview-card {
   background: #ffffff;
+<<<<<<< HEAD
   border: 1px solid #BFD5F2;
+=======
+  border: 1px solid rgba(0, 0, 0, 0.1);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.25s, border-color 0.25s;
@@ -243,12 +344,20 @@ a.service-card:hover {
 
 .blog-preview-card:hover {
   transform: translateY(-6px);
+<<<<<<< HEAD
   border-color: #2463B5;
+=======
+  border-color: rgba(0, 0, 0, 0.3);
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
 
 .blog-preview-thumb {
   height: 140px;
+<<<<<<< HEAD
   background: #E3EEFF;
+=======
+  background: #f0f0f1;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,7 +372,11 @@ a.service-card:hover {
 
 /* CTA Banner */
 .cta-banner {
+<<<<<<< HEAD
   background: #2463B5;
+=======
+  background: #18181b;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   padding: 70px 0;
   margin-top: 40px;
 }
@@ -271,7 +384,11 @@ a.service-card:hover {
 .btn-white {
   display: inline-block;
   background: #fff;
+<<<<<<< HEAD
   color: #2463B5;
+=======
+  color: #18181b;
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
   padding: 14px 32px;
   border-radius: 30px;
   font-weight: 700;
@@ -299,6 +416,7 @@ a.service-card:hover {
   .hero-blob {
     filter: blur(60px);
   }
+<<<<<<< HEAD
 }
 
 /* Trust Badges Marquee (already in index.css, skip if duplicate) */
@@ -457,4 +575,6 @@ FAQ Accordion
 .ts-dot.active {
   background: #2463B5;
   transform: scale(1.3);
+=======
+>>>>>>> 62b5e4c3341d445a222f6fa0eb34f7ce2e0c02e8
 }
