@@ -29,11 +29,11 @@ function Services() {
     <div>
       <section className="services-hero">
         <div className="container" style={{ textAlign: 'center' }}>
-          <p className="badge">What I Offer</p>
+          <p className="badge">What We Offer</p>
           <h1 className="services-hero-title">Complete Digital Growth Services</h1>
           <p className="services-hero-subtitle">
-            From getting found online to converting that traffic into customers —
-            every service works together toward one goal: your business growing.
+            From getting found online to converting that traffic into customers
+            every service works together toward one goal: <strong>Your Business Growing.</strong>
           </p>
         </div>
       </section>

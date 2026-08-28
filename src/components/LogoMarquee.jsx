@@ -1,3 +1,5 @@
+import './LogoMarquee.css';
+
 function LogoMarquee({ items }) {
   const doubled = [...items, ...items];
 
@@ -5,9 +7,7 @@ function LogoMarquee({ items }) {
     <div className="marquee-wrap">
       <div className="marquee-track">
         {doubled.map((item, i) => (
-          <div key={i} className="marquee-chip">
-            {item}
-          </div>
+          <span key={i} className="marquee-badge">{item}</span>
         ))}
       </div>
     </div>

@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
 import LeadPopup from './components/LeadPopup';
 import ScrollToTop from './components/ScrollToTop';
+import RouteScrollTop from './components/RouteScrollTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -15,6 +16,7 @@ import Admin from './pages/Admin';
 function App() {
   return (
     <div>
+      <RouteScrollTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

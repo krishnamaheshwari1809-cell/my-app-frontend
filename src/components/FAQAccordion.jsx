@@ -1,32 +1,25 @@
 import { useState } from 'react';
-
-function FAQItem({ q, a, isOpen, onClick }) {
-  return (
-    <div className="faq-item">
-      <button className="faq-question" onClick={onClick}>
-        <span>{q}</span>
-        <span className={`faq-icon ${isOpen ? 'open' : ''}`}>+</span>
-      </button>
-      <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
-        <p>{a}</p>
-      </div>
-    </div>
-  );
-}
+import './FAQAccordion.css';
 
 function FAQAccordion({ items }) {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggle = (i) => {
+    setOpenIndex(openIndex === i ? null : i);
+  };
 
   return (
     <div className="faq-list">
       {items.map((item, i) => (
-        <FAQItem
-          key={i}
-          q={item.q}
-          a={item.a}
-          isOpen={openIndex === i}
-          onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-        />
+        <div key={i} className={`faq-item ${openIndex === i ? 'open' : ''}`}>
+          <button className="faq-question" onClick={() => toggle(i)}>
+            <span>{item.q}</span>
+            <span className="faq-icon">{openIndex === i ? '−' : '+'}</span>
+          </button>
+          <div className="faq-answer-wrap">
+            <p className="faq-answer">{item.a}</p>
+          </div>
+        </div>
       ))}
     </div>
   );

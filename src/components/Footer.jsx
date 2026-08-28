@@ -3,7 +3,7 @@ function Footer() {
     <footer style={styles.footer}>
       <div className="container" style={styles.wrap}>
         <div>
-          <h3 style={{ marginBottom: '8px' }}>Krishna<span style={{ color: '#8b5cf6' }}>.</span></h3>
+          <h3 style={{ marginBottom: '8px' }}>TechBuds<span style={{ color: '#8b5cf6' }}>.</span></h3>
           <p style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>
             Web Development, SEO & Digital Marketing Specialist
           </p>
@@ -18,7 +18,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <p style={styles.copyright}>© {new Date().getFullYear()} Krishna Maheshwari. All rights reserved.</p>
+      <p style={styles.copyright}>© {new Date().getFullYear()} TechBuds. All rights reserved.</p>
     </footer>
   );
 }

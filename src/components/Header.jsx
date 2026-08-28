@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import logo from '../assets/logo.png';
 
 function Header() {
   const location = useLocation();
@@ -17,7 +18,7 @@ function Header() {
     <header className="site-header">
       <div className="container header-wrap">
         <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
-          Krishna<span style={{ color: '#8b5cf6' }}>.</span>
+          <img src={logo} alt="TechBuds" className="logo-img" />
         </Link>
 
         <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
@@ -26,9 +27,10 @@ function Header() {
               key={link.path}
               to={link.path}
               className="nav-link"
-              style={{
-                color: location.pathname === link.path ? '#8b5cf6' : '#f1f1f5',
-              }}
+style={{
+  color: location.pathname === link.path ? '#2463B5' : '#12345B',
+  fontWeight: location.pathname === link.path ? 700 : 500,
+}}
               onClick={() => setMenuOpen(false)}
             >
               {link.name}
