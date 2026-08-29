@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import heroBanner from '../assets/homebanner.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { servicesData } from '../data/servicesData';
@@ -47,19 +48,24 @@ function Home() {
 
   return (
     <div>
-      <section className="hero">
-        <div className="hero-blob blob-1"></div>
-        <div className="hero-blob blob-2"></div>
-        <div className="container hero-content">
-          <p className="badge">{content.hero?.badge}</p>
-          <h1 className="hero-title">{content.hero?.title}</h1>
-          <p className="hero-subtitle">{content.hero?.subtitle}</p>
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact" className="btn">Book a Free Consultation</Link>
-            <Link to="/services" className="btn-outline">Explore Services</Link>
-          </div>
-        </div>
-      </section>
+<section className="hero-banner-section">
+  <img src={heroBanner} alt="TechBuds Banner" className="hero-banner-bg" />
+  <div className="hero-banner-overlay">
+    <div className="container hero-content">
+      <p className="badge">👋 Welcome to my portfolio</p>
+      <h1 className="hero-title">
+        Hi, I'm <span style={{ color: '#60a5fa' }}>Krishna</span>
+      </h1>
+      <p className="hero-subtitle">
+        Digital Marketing & Web Development Specialist — helping businesses grow online through SEO, SMM, SEM, Meta Ads and modern websites.
+      </p>
+      <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <Link to="/contact" className="btn">Book a Free Consultation</Link>
+        <Link to="/services" className="btn-outline">Explore Services</Link>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="stats-section">
         <div className="container stats-grid">
