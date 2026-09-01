@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Reveal from '../components/Reveal';
 import Loader from '../components/Loader';
@@ -34,7 +35,11 @@ function Blog() {
           <div style={styles.grid}>
             {posts.map((post, i) => (
               <Reveal key={post._id} delay={i * 0.06}>
-                <div style={styles.card} className="blog-card-hover">
+                <Link
+                  to={`/blog/${post._id}`}
+                  style={{ ...styles.card, textDecoration: 'none', color: 'inherit', display: 'block' }}
+                  className="blog-card-hover"
+                >
                   {post.image ? (
                     <img src={post.image} alt={post.title} style={styles.img} />
                   ) : (
@@ -51,7 +56,7 @@ function Blog() {
                     <h3 style={{ margin: '8px 0 12px', fontSize: '1.1rem' }}>{post.title}</h3>
                     <p style={{ color: '#a1a1aa', fontSize: '0.9rem', lineHeight: 1.6 }}>{post.excerpt}</p>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import ValuesWheel from '../components/ValuesWheel';
+import aboutBanner from '../assets/aboutbanner.png';
 import './About.css';
 
 function About() {
@@ -14,22 +15,25 @@ function About() {
 
   return (
     <div>
-      <section className="about-hero">
-        <div className="container">
-          <p className="badge">About Me</p>
-          <h1 className="about-hero-title">Turning Digital Strategy Into Real Business Growth</h1>
-          <p className="about-hero-subtitle">
-            A one-stop freelance partner for SEO, social media, paid ads, and web development —
-            built around businesses that want results, not just reports.
-          </p>
+      <section className="about-banner-section">
+        <img src={aboutBanner} alt="About Us" className="about-banner-bg" />
+        <div className="about-banner-overlay">
+          <div className="container about-banner-content">
+            {/* <p className="badge">About Me</p>
+            <h1 className="about-hero-title">Turning Digital Strategy Into Real Business Growth</h1>
+            <p className="about-hero-subtitle">
+              A one-stop freelance partner for SEO, social media, paid ads, and web development —
+              built around businesses that want results, not just reports.
+            </p> */}
+          </div>
         </div>
       </section>
 
-<section className="section">
-  <div className="container about-story-centered">
-    <div>
-      <p className="eyebrow">The Approach</p>
-      <h2 className="story-title">One Partner, Every Piece of Your Growth</h2>
+      <section className="section">
+        <div className="container about-story-centered">
+          <div>
+            <p className="eyebrow">The Approach</p>
+            <h2 className="story-title">One Partner, Every Piece of Your Growth</h2>
             <p className="story-para">
               Most businesses end up juggling separate people for marketing and separate
               people for their website — and the two rarely talk to each other. The result
@@ -45,26 +49,11 @@ function About() {
               No jargon-heavy reports, no guesswork dressed up as strategy — just a clear
               plan built around your business, and the follow-through to see it out.
             </p>
-            {/* <div style={{ marginTop: '28px' }}>
-              <Link to="/contact" className="btn">Let's Work Together</Link>
-            </div> */}
           </div>
-          {/* <div className="about-highlight-card">
-            <div className="highlight-avatar">K</div>
-            <h3 style={{ marginBottom: '6px' }}>Krishna Maheshwari</h3>
-            <p style={{ color: '#71717a', fontSize: '0.9rem', marginBottom: '20px' }}>
-              Digital Marketing & Web Development Specialist
-            </p>
-            <div className="highlight-tags">
-              {['SEO', 'SMM', 'SEM', 'SMO', 'Meta Ads', 'Google Ads', 'Web Development'].map((s) => (
-                <span key={s} className="highlight-tag">{s}</span>
-              ))}
-            </div>
-          </div> */}
         </div>
       </section>
 
-      <section className="section" style={{ background: '#fafafa' }}>
+      <section className="section" style={{ background: '#0a0e17' }}>
         <div className="container">
           <ValuesWheel
             values={values}

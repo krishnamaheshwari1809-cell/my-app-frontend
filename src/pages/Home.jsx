@@ -48,24 +48,15 @@ function Home() {
 
   return (
     <div>
-<section className="hero-banner-section">
-  <img src={heroBanner} alt="TechBuds Banner" className="hero-banner-bg" />
-  <div className="hero-banner-overlay">
-    <div className="container hero-content">
-      {/* <p className="badge">👋 Welcome to my portfolio</p> */}
-      {/* <h1 className="hero-title">
-        Hi, I'm <span style={{ color: '#60a5fa' }}>Krishna</span>
-      </h1>
-      <p className="hero-subtitle">
-        Digital Marketing & Web Development Specialist — helping businesses grow online through SEO, SMM, SEM, Meta Ads and modern websites.
-      </p> */}
-      <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-        {/* <Link to="/contact" className="btn">Book a Free Consultation</Link>
-        <Link to="/services" className="btn-outline">Explore Services</Link> */}
-      </div>
-    </div>
-  </div>
-</section>
+      <section className="hero-banner-section">
+        <img src={heroBanner} alt="TechBuds Banner" className="hero-banner-bg" />
+        <div className="hero-banner-overlay">
+          <div className="container hero-content">
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="stats-section">
         <div className="container stats-grid">
@@ -88,7 +79,7 @@ function Home() {
 
       <section className="section">
         <div className="container">
-          <p className="eyebrow" style={{ textAlign: 'center' }}>What I Offer</p>
+          <p className="eyebrow" style={{ textAlign: 'center' }}>What We Offer</p>
           <h2 className="section-title">Services Built to Grow Your Business</h2>
           <p className="section-subtitle">Every service works toward one goal — measurable growth</p>
           <div className="services-grid">
@@ -129,8 +120,7 @@ function Home() {
 
       <section className="section">
         <div className="container">
-          <p className="eyebrow" style={{ textAlign: 'center' }}>Why Me</p>
-          <h2 className="section-title">Why Choose Me</h2>
+          <h2 className="section-title">Why Choose Us</h2>
           <p className="section-subtitle">What makes working together easy</p>
           <div className="why-grid">
             {content.whyChoose?.map((w, i) => (
@@ -152,7 +142,7 @@ function Home() {
         <div className="container">
           <p className="eyebrow" style={{ textAlign: 'center' }}>Testimonials</p>
           <h2 className="section-title">What People Say</h2>
-          <p className="section-subtitle">Feedback from clients I've worked with</p>
+          <p className="section-subtitle">Feedback from clients we've worked with</p>
           <TestimonialSlider testimonials={content.testimonials} />
         </div>
       </section>
@@ -166,7 +156,7 @@ function Home() {
             <div className="blog-preview-grid">
               {posts.map((post, i) => (
                 <Reveal key={post._id} delay={i * 0.1}>
-                  <div className="blog-preview-card">
+                  <Link to={`/blog/${post._id}`} className="blog-preview-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                     {post.image ? (
                       <img src={post.image} alt={post.title} className="blog-preview-img" />
                     ) : (
@@ -176,7 +166,7 @@ function Home() {
                       <h3 style={{ fontSize: '1.05rem', marginBottom: '10px' }}>{post.title}</h3>
                       <p style={{ color: '#a1a1aa', fontSize: '0.88rem', lineHeight: 1.6 }}>{post.excerpt}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Reveal>
               ))}
             </div>
