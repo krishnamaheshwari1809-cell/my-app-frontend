@@ -49,8 +49,11 @@ function Home() {
 
   return (
     <div>
+<<<<<<< HEAD
       <Seo page="home" />
 
+=======
+>>>>>>> 6d7352310017dd8f9c48bc89f2f23014ca57f4af
       <section className="hero-banner-section">
         <img src={heroBanner} alt="TechBuds Banner" className="hero-banner-bg" />
         <div className="hero-banner-overlay">

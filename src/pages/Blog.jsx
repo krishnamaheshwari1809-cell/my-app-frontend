@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react';
+=======
+import { useState, useEffect } from 'react';
+>>>>>>> 6d7352310017dd8f9c48bc89f2f23014ca57f4af
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Loader from '../components/Loader';
@@ -61,6 +65,38 @@ function Blog() {
           <p style={{ textAlign: 'center', color: '#71717a', marginTop: '40px' }}>
             New blog posts coming soon — stay tuned!
           </p>
+<<<<<<< HEAD
+=======
+        ) : (
+          <div style={styles.grid}>
+            {posts.map((post, i) => (
+              <Reveal key={post._id} delay={i * 0.06}>
+                <Link
+                  to={`/blog/${post._id}`}
+                  style={{ ...styles.card, textDecoration: 'none', color: 'inherit', display: 'block' }}
+                  className="blog-card-hover"
+                >
+                  {post.image ? (
+                    <img src={post.image} alt={post.title} style={styles.img} />
+                  ) : (
+                    <div style={styles.imgPlaceholder}>📝</div>
+                  )}
+                  <div style={{ padding: '20px' }}>
+                    <p style={styles.date}>
+                      {new Date(post.createdAt).toLocaleDateString('en-IN', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
+                      })}
+                    </p>
+                    <h3 style={{ margin: '8px 0 12px', fontSize: '1.1rem' }}>{post.title}</h3>
+                    <p style={{ color: '#a1a1aa', fontSize: '0.9rem', lineHeight: 1.6 }}>{post.excerpt}</p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+>>>>>>> 6d7352310017dd8f9c48bc89f2f23014ca57f4af
         )}
       </div>
     </div>
