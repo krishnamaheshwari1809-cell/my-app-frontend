@@ -27,14 +27,14 @@ function Home() {
     { step: '01', title: 'Discovery Call', desc: 'We discuss your business, goals, and current challenges.' },
     { step: '02', title: 'Strategy', desc: 'A custom plan is built around your specific needs and budget.' },
     { step: '03', title: 'Execution', desc: "Work begins with regular updates on progress." },
-    { step: '04', title: 'Results', desc: 'Clear reports show what\'s working and what\'s next.' },
+    { step: '04', title: 'Results', desc: "Clear reports show what's working and what's next." },
   ];
 
   const faqs = [
     { q: 'What services do you offer?', a: 'I offer SEO, social media marketing, paid ads (Google & Meta), and complete web development — as a single point of contact for your digital growth.' },
     { q: 'How long before I see results?', a: 'Paid ads can bring traffic within days. SEO and content typically show meaningful results in 3-6 months, depending on competition and starting point.' },
     { q: 'Do you work with small businesses?', a: 'Yes — I work with startups, small businesses, and growing companies, tailoring the strategy and budget to what makes sense for your size.' },
-    { q: 'Will I get regular updates and reports?', a: 'Absolutely. You will get clear, regular reports on what has been done, what is working, and what the next steps are — no guessing games.' },
+    { q: 'Will I get regular updates and reports?', a: "Absolutely. You will get clear, regular reports on what has been done, what is working, and what the next steps are — no guessing games." },
     { q: 'Do you also build websites, or just marketing?', a: 'Both. I handle SEO/marketing and web development together, so the traffic I bring in lands on a site actually built to convert it.' },
   ];
 
@@ -49,17 +49,12 @@ function Home() {
 
   return (
     <div>
-<<<<<<< HEAD
       <Seo page="home" />
 
-=======
->>>>>>> 6d7352310017dd8f9c48bc89f2f23014ca57f4af
       <section className="hero-banner-section">
         <img src={heroBanner} alt="TechBuds Banner" className="hero-banner-bg" />
         <div className="hero-banner-overlay">
           <div className="container hero-content">
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            </div>
           </div>
         </div>
       </section>

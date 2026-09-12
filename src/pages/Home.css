@@ -1,11 +1,7 @@
 .hero-banner-section {
   position: relative;
   width: 100%;
-<<<<<<< HEAD
-  aspect-ratio: 16 / 6;   /* apni banner image ke actual ratio se replace kar */
-=======
-  aspect-ratio: 16 / 6;
->>>>>>> 6d7352310017dd8f9c48bc89f2f23014ca57f4af
+  height: 560px;
   overflow: hidden;
 }
 
@@ -31,15 +27,6 @@
 .hero-content {
   text-align: center;
   animation: fadeInUp 0.8s ease both;
-}
-
-.banner-cta-link {
-  position: absolute;
-  left: 4%;
-  top: 82%;
-  width: 23%;
-  height: 10%;
-  display: block;
 }
 
 @keyframes fadeInUp {
@@ -268,16 +255,24 @@ a.service-card:hover {
   transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.2rem;
+@media (max-width: 1024px) {
+  .hero-banner-section {
+    height: 460px;
   }
+}
 
-  .hero-subtitle {
-    font-size: 1rem;
+@media (max-width: 768px) {
+  .hero-banner-section {
+    height: 320px;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner-section {
+    height: 240px;
   }
 }
