@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import ValuesWheel from '../components/ValuesWheel';
+import Seo from '../components/Seo';
 import './About.css';
 
 function About() {
@@ -14,6 +15,8 @@ function About() {
 
   return (
     <div>
+      <Seo page="about" />
+
       <section className="about-hero">
         <div className="container">
           <p className="badge">About Me</p>
@@ -25,11 +28,11 @@ function About() {
         </div>
       </section>
 
-<section className="section">
-  <div className="container about-story-centered">
-    <div>
-      <p className="eyebrow">The Approach</p>
-      <h2 className="story-title">One Partner, Every Piece of Your Growth</h2>
+      <section className="section">
+        <div className="container about-story-grid">
+          <div>
+            <p className="eyebrow">The Approach</p>
+            <h2 className="story-title">One Partner, Every Piece of Your Growth</h2>
             <p className="story-para">
               Most businesses end up juggling separate people for marketing and separate
               people for their website — and the two rarely talk to each other. The result
@@ -45,11 +48,11 @@ function About() {
               No jargon-heavy reports, no guesswork dressed up as strategy — just a clear
               plan built around your business, and the follow-through to see it out.
             </p>
-            {/* <div style={{ marginTop: '28px' }}>
+            <div style={{ marginTop: '28px' }}>
               <Link to="/contact" className="btn">Let's Work Together</Link>
-            </div> */}
+            </div>
           </div>
-          {/* <div className="about-highlight-card">
+          <div className="about-highlight-card">
             <div className="highlight-avatar">K</div>
             <h3 style={{ marginBottom: '6px' }}>Krishna Maheshwari</h3>
             <p style={{ color: '#71717a', fontSize: '0.9rem', marginBottom: '20px' }}>
@@ -60,11 +63,11 @@ function About() {
                 <span key={s} className="highlight-tag">{s}</span>
               ))}
             </div>
-          </div> */}
+          </div>
         </div>
       </section>
 
-      <section className="section" style={{ background: '#fafafa' }}>
+      <section className="section" style={{ background: '#0d1220' }}>
         <div className="container">
           <ValuesWheel
             values={values}
