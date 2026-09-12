@@ -56,7 +56,7 @@ function LeadPopup() {
         {status === 'done' ? (
           <div className="lp-success">
             <p style={{ fontSize: '2rem', marginBottom: '10px' }}>✅</p>
-            <h3>Thanks! I'll get back to you shortly.</h3>
+            <h3>Thanks! we'll get back to you shortly.</h3>
           </div>
         ) : (
           <>

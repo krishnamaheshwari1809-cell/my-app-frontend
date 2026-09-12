@@ -16,6 +16,7 @@ function About() {
   return (
     <div>
       <Seo page="about" />
+      
       <section className="about-hero">
         <div className="container">
           <p className="badge">About Me</p>
@@ -53,7 +54,7 @@ function About() {
           </div>
           <div className="about-highlight-card">
             <div className="highlight-avatar">K</div>
-            <h3 style={{ marginBottom: '6px' }}>Krishna Maheshwari</h3>
+            <h3 style={{ marginBottom: '6px' }}>Techbuds</h3>
             <p style={{ color: '#71717a', fontSize: '0.9rem', marginBottom: '20px' }}>
               Digital Marketing & Web Development Specialist
             </p>
