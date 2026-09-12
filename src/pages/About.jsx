@@ -1,10 +1,6 @@
 import { Link } from 'react-router-dom';
 import ValuesWheel from '../components/ValuesWheel';
-<<<<<<< HEAD
 import Seo from '../components/Seo';
-=======
-import aboutBanner from '../assets/aboutbanner.png';
->>>>>>> 6d7352310017dd8f9c48bc89f2f23014ca57f4af
 import './About.css';
 
 function About() {
@@ -19,9 +15,7 @@ function About() {
 
   return (
     <div>
-<<<<<<< HEAD
       <Seo page="about" />
-
       <section className="about-hero">
         <div className="container">
           <p className="badge">About Me</p>
@@ -30,28 +24,11 @@ function About() {
             A one-stop freelance partner for SEO, social media, paid ads, and web development —
             built around businesses that want results, not just reports.
           </p>
-=======
-      <section className="about-banner-section">
-        <img src={aboutBanner} alt="About Us" className="about-banner-bg" />
-        <div className="about-banner-overlay">
-          <div className="container about-banner-content">
-            {/* <p className="badge">About Me</p>
-            <h1 className="about-hero-title">Turning Digital Strategy Into Real Business Growth</h1>
-            <p className="about-hero-subtitle">
-              A one-stop freelance partner for SEO, social media, paid ads, and web development —
-              built around businesses that want results, not just reports.
-            </p> */}
-          </div>
->>>>>>> 6d7352310017dd8f9c48bc89f2f23014ca57f4af
         </div>
       </section>
 
       <section className="section">
-<<<<<<< HEAD
         <div className="container about-story-grid">
-=======
-        <div className="container about-story-centered">
->>>>>>> 6d7352310017dd8f9c48bc89f2f23014ca57f4af
           <div>
             <p className="eyebrow">The Approach</p>
             <h2 className="story-title">One Partner, Every Piece of Your Growth</h2>
@@ -70,7 +47,6 @@ function About() {
               No jargon-heavy reports, no guesswork dressed up as strategy — just a clear
               plan built around your business, and the follow-through to see it out.
             </p>
-<<<<<<< HEAD
             <div style={{ marginTop: '28px' }}>
               <Link to="/contact" className="btn">Let's Work Together</Link>
             </div>
@@ -91,13 +67,6 @@ function About() {
       </section>
 
       <section className="section" style={{ background: '#0d1220' }}>
-=======
-          </div>
-        </div>
-      </section>
-
-      <section className="section" style={{ background: '#0a0e17' }}>
->>>>>>> 6d7352310017dd8f9c48bc89f2f23014ca57f4af
         <div className="container">
           <ValuesWheel
             values={values}
