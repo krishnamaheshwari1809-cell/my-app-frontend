@@ -1,9 +1,7 @@
 .hero-banner-section {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 6;
-=======
-  height: 560px;
+  aspect-ratio: 16 / 6;   /* apni banner image ke actual ratio se replace kar */
   overflow: hidden;
 }
 
@@ -13,6 +11,24 @@
   object-fit: cover;
   object-position: center;
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .hero-banner-section {
+    height: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner-section {
+    height: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner-section {
+    height: 300px;
+  }
 }
 
 .hero-banner-overlay {
@@ -257,24 +273,20 @@ a.service-card:hover {
   transform: translateY(-2px);
 }
 
-@media (max-width: 1024px) {
-  .hero-banner-section {
-    height: 460px;
-  }
-}
-
 @media (max-width: 768px) {
   .hero-banner-section {
-    height: 320px;
+    height: 380px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-banner-section {
-    height: 240px;
   }
 }
