@@ -20,7 +20,15 @@ function App() {
       <RouteScrollTop />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <LeadPopup />
+            </>
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
@@ -31,7 +39,6 @@ function App() {
       </Routes>
       <Footer />
       <FloatingButtons />
-      <LeadPopup />
       <ScrollToTop />
     </div>
   );
