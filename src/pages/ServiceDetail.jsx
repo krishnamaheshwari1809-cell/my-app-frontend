@@ -1,18 +1,36 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 import Reveal from '../components/Reveal';
+import Seo from '../components/Seo';
+import { useSeoData } from '../context/SeoContext';
 import './ServiceDetail.css';
 
 function ServiceDetail() {
   const { slug } = useParams();
-  const service = servicesData.find((s) => s.slug === slug);
+  const { content } = useSeoData();
+
+  const activeServices = (content?.servicesList && content.servicesList.length > 0)
+    ? content.servicesList
+    : servicesData;
+
+  const service = activeServices.find((s) => s.slug === slug);
 
   if (!service) {
     return <Navigate to="/services" replace />;
   }
 
+  const customSeo = (content?.serviceSeo || []).find((s) => s.slug === slug);
+  const seoTitle = customSeo?.title || `${service.full} | TechBuds`;
+  const seoDescription = customSeo?.description || service.tagline;
+
   return (
     <div>
+      <Seo
+        page="services"
+        titleOverride={seoTitle}
+        descriptionOverride={seoDescription}
+      />
+
       <section className="sd-hero">
         <div className="container">
           <Link to="/services" className="sd-back">← All Services</Link>
@@ -32,7 +50,7 @@ function ServiceDetail() {
 
               <h2 style={{ fontSize: '1.5rem', marginBottom: '16px' }}>What's Included</h2>
               <ul className="sd-included-list">
-                {service.included.map((item) => (
+                {(service.included || []).map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -42,7 +60,7 @@ function ServiceDetail() {
           <Reveal delay={0.15}>
             <div className="sd-benefits-card">
               <h3 style={{ marginBottom: '18px' }}>Key Benefits</h3>
-              {service.benefits.map((b) => (
+              {(service.benefits || []).map((b) => (
                 <div key={b} className="sd-benefit-row">
                   <span className="sd-check">✓</span>
                   <span>{b}</span>
@@ -53,7 +71,7 @@ function ServiceDetail() {
         </div>
       </section>
 
-      {service.faqs && (
+      {service.faqs && service.faqs.length > 0 && (
         <section className="section" style={{ background: 'rgba(255,255,255,0.02)' }}>
           <div className="container" style={{ maxWidth: '700px' }}>
             <h2 className="section-title">Frequently Asked Questions</h2>

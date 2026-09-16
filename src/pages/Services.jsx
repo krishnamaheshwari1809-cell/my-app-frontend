@@ -1,11 +1,22 @@
 import { Link } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 import Reveal from '../components/Reveal';
-import LogoMarquee from '../components/LogoMarquee';
-import FAQAccordion from '../components/FAQAccordion';
+import Seo from '../components/Seo';
+import { useSeoData } from '../context/SeoContext';
 import './Services.css';
 
 function Services() {
+  const { content } = useSeoData();
+
+  const heroBadge = content?.servicesPageHero?.badge || 'What I Offer';
+  const heroTitle = content?.servicesPageHero?.title || 'Complete Digital Growth Services';
+  const heroSubtitle = content?.servicesPageHero?.subtitle ||
+    "From getting found online to converting that traffic into customers — every service works together toward one goal: your business growing.";
+
+  const activeServices = (content?.servicesList && content.servicesList.length > 0)
+    ? content.servicesList
+    : servicesData;
+
   const process = [
     { step: '01', title: 'Discovery Call', desc: 'We discuss your business, goals, and current challenges.' },
     { step: '02', title: 'Strategy', desc: 'A custom plan is built around your specific needs and budget.' },
@@ -13,41 +24,22 @@ function Services() {
     { step: '04', title: 'Results & Reporting', desc: "Clear reports show what's working and where we go next." },
   ];
 
-  const trustBadges = [
-    'SEO Optimized', '7+ Years Experience', 'Google Ads Certified', 'Meta Ads Expert',
-    'Web Development', 'Content Marketing', '100+ Projects Delivered', 'Data-Driven Strategy',
-  ];
-
-  const faqs = [
-    { q: 'Which service should I start with?', a: 'It depends on your goals. If you need visibility, start with SEO. If you need traffic fast, paid ads work quicker. A free consultation can help figure out the right starting point.' },
-    { q: 'Can I combine multiple services together?', a: 'Yes, most clients combine SEO, ads, and web development for the best results — they work better together than in isolation.' },
-    { q: 'Do you offer monthly or one-time packages?', a: 'Both. SEO and marketing services work best as ongoing monthly plans, while web development is usually a one-time project with optional maintenance.' },
-    { q: 'How do you measure success for each service?', a: 'Every service has clear KPIs — traffic, rankings, leads, conversions, or ad ROI — and you get regular reports showing exactly where things stand.' },
-  ];
-
   return (
     <div>
+      <Seo page="services" />
+
       <section className="services-hero">
         <div className="container" style={{ textAlign: 'center' }}>
-          <p className="badge">What We Offer</p>
-          <h1 className="services-hero-title">Complete Digital Growth Services</h1>
-          <p className="services-hero-subtitle">
-            From getting found online to converting that traffic into customers
-            every service works together toward one goal: <strong>Your Business Growing.</strong>
-          </p>
+          <p className="badge">{heroBadge}</p>
+          <h1 className="services-hero-title">{heroTitle}</h1>
+          <p className="services-hero-subtitle">{heroSubtitle}</p>
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: '0', paddingBottom: '40px' }}>
-        <div className="container">
-          <LogoMarquee items={trustBadges} />
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingTop: '0' }}>
+      <section className="section">
         <div className="container">
           <div className="services-detail-grid">
-            {servicesData.map((s, i) => (
+            {activeServices.map((s, i) => (
               <Reveal key={s.slug} delay={i * 0.08}>
                 <Link to={`/services/${s.slug}`} className="service-detail-card">
                   <div className="service-detail-icon">{s.icon}</div>
@@ -78,15 +70,6 @@ function Services() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <p className="eyebrow" style={{ textAlign: 'center' }}>FAQs</p>
-          <h2 className="section-title">Common Questions</h2>
-          <p className="section-subtitle">Quick answers about how these services work</p>
-          <FAQAccordion items={faqs} />
         </div>
       </section>
 

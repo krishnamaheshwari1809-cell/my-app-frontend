@@ -1,9 +1,8 @@
 .hero-banner-section {
   position: relative;
   width: 100%;
-  height: 500px;
+  aspect-ratio: 16 / 6;   /* apni banner image ke actual ratio se replace kar */
   overflow: hidden;
-  object-fit: contain;
 }
 
 .hero-banner-bg {
