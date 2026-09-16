@@ -1,11 +1,9 @@
 .hero-banner-section {
   position: relative;
   width: 100%;
-<<<<<<< HEAD
-  aspect-ratio: 16 / 6;   /* apni banner image ke actual ratio se replace kar */
+  aspect-ratio: 16 / 6;
 =======
   height: 560px;
->>>>>>> fa7275a6143037cfee974bbd1e8df8ccad929d0a
   overflow: hidden;
 }
 

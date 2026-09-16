@@ -55,11 +55,8 @@ function Home() {
         <img src={heroBanner} alt="TechBuds Banner" className="hero-banner-bg" />
         <div className="hero-banner-overlay">
           <div className="container hero-content">
-<<<<<<< HEAD
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             </div>
-=======
->>>>>>> fa7275a6143037cfee974bbd1e8df8ccad929d0a
           </div>
         </div>
       </section>

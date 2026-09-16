@@ -16,11 +16,6 @@ function About() {
   return (
     <div>
       <Seo page="about" />
-<<<<<<< HEAD
-
-=======
-      
->>>>>>> fa7275a6143037cfee974bbd1e8df8ccad929d0a
       <section className="about-hero">
         <div className="container">
           <p className="badge">About Me</p>
