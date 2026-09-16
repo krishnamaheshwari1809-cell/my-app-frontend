@@ -1,0 +1,77 @@
+# llms.txt
+
+Title: my-app
+URL: https://techbuds.in/
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/about
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/services
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/blog
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/contact
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/services/seo
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/services/smm
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/services/sem
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/services/smo
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/services/meta-ads
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/services/google-ads
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/services/web-development
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/blog/6a8b2d6a04d4ad8b6358473e
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/blog/6a8b2d6a04d4ad8b6358473f
+Description: 
+------------------------------------------------------------
+
+Title: my-app
+URL: https://techbuds.in/blog/6a8b2d6a04d4ad8b63584740
+Description: 
+------------------------------------------------------------
+
