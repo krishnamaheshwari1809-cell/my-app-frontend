@@ -682,7 +682,7 @@ const Admin = () => {
                   </div>
                   <div className="form-group" style={{ flex: 2 }}>
                     <label>Value</label>
-                    <input type="text" placeholder="e.g. +91 9953792977" value={link.value || ''} onChange={(e) => handleContactLinkChange(idx, 'value', e.target.value)} />
+                    {/* <input type="text" placeholder="e.g. +91 9953792977" value={link.value || ''} onChange={(e) => handleContactLinkChange(idx, 'value', e.target.value)} /> */}
                   </div>
                   <button type="button" className="delete-btn" onClick={() => removeContactLink(idx)}>✕</button>
                 </div>

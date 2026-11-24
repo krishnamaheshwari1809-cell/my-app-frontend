@@ -145,13 +145,13 @@ function Contact() {
               </div>
             </a>
 
-            <a href="tel:+919953792977" style={styles.infoRow}>
+            {/* <a href="tel:+919953792977" style={styles.infoRow}>
               <span style={styles.icon}>📞</span>
               <div>
                 <p style={{ color: '#a1a1aa', fontSize: '0.85rem' }}>Phone</p>
-                {/* <p>+91 9953792977</p> */}
+                <p>+91 9953792977</p>
               </div>
-            </a>
+            </a> */}
           </div>
 
           <form style={styles.form} onSubmit={handleSubmit} noValidate>
