@@ -149,7 +149,7 @@ function Contact() {
               <span style={styles.icon}>📞</span>
               <div>
                 <p style={{ color: '#a1a1aa', fontSize: '0.85rem' }}>Phone</p>
-                <p>+91 9953792977</p>
+                {/* <p>+91 9953792977</p> */}
               </div>
             </a>
           </div>
