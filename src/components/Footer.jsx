@@ -13,9 +13,9 @@ function Footer() {
           <a href="mailto:krishnamaheshwari597@gmail.com" style={styles.contactLink}>
             📧 krishnamaheshwari597@gmail.com
           </a>
-          <a href="tel:+919953792977" style={styles.contactLink}>
+          {/* <a href="tel:+919953792977" style={styles.contactLink}>
             📞 +91 9953792977
-          </a>
+          </a> */}
         </div>
       </div>
       <p style={styles.copyright}>© {new Date().getFullYear()} TechBuds. All rights reserved.</p>

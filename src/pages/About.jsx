@@ -18,7 +18,7 @@ function About() {
       <Seo page="about" />
       <section className="about-hero">
         <div className="container">
-          <p className="badge">About Me</p>
+          {/* <p className="badge">About Me</p> */}
           <h1 className="about-hero-title">Turning Digital Strategy Into Real Business Growth</h1>
           <p className="about-hero-subtitle">
             A one-stop freelance partner for SEO, social media, paid ads, and web development —
@@ -30,7 +30,7 @@ function About() {
       <section className="section">
         <div className="container about-story-grid">
           <div>
-            <p className="eyebrow">The Approach</p>
+            {/* <p className="eyebrow">The Approach</p> */}
             <h2 className="story-title">One Partner, Every Piece of Your Growth</h2>
             <p className="story-para">
               Most businesses end up juggling separate people for marketing and separate
@@ -51,8 +51,8 @@ function About() {
               <Link to="/contact" className="btn">Let's Work Together</Link>
             </div>
           </div>
-          <div className="about-highlight-card">
-            <div className="highlight-avatar">K</div>
+          {/* <div className="about-highlight-card">
+            <div className="highlight-avatar">TB</div>
             <h3 style={{ marginBottom: '6px' }}>Techbuds</h3>
             <p style={{ color: '#71717a', fontSize: '0.9rem', marginBottom: '20px' }}>
               Digital Marketing & Web Development Specialist
@@ -62,7 +62,7 @@ function About() {
                 <span key={s} className="highlight-tag">{s}</span>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
